@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(67, 77, 87);
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    color: white;
+    display: flex;
+    margin: 30px auto;
+    flex-direction: column;
+    text-align: center;
+    animation-name: topdown;
+    animation-duration: 0.7s;
+}
+
+header p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 2px;
+}
+
+header h2 {
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 48px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    gap: 15px;
+}
+
+main .photo {
+    animation: side1 0.7s;
+}
+
+main .photo:nth-child(2) {
+    animation: side2 0.7s;
+}
+
+main div img {
+    border-radius: 8px;
+    width: 380px;
+    height: 380px;
+}
+
+.photo {
+    position: relative;
+}
+
+main div h2 {
+    font-family: sans-serif;
+    width: 120px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    position: absolute;
+    bottom: 40px;
+    left: 35px;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 5px;
+}
+
+img:hover {
+    transform: scale(1.05);
+    transition-duration: 0.7s;
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes side1 {
+    0% {
+        opacity: 0;
+        transform: translateX(50px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+@keyframes side2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+        display: grid;
+        grid-template-columns: 35% 65%;
+    }
+}
